@@ -1,0 +1,67 @@
+﻿@model TrabalhoBanda.Models.Musico
+
+@{
+    Layout = "_LayoutIES";
+}
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+}
+
+<div class="card-body">
+    <div class="card-header text-primary bg-light text-center h1">
+        Excluir Musico
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label asp-for="MusicoID" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <input asp-for="MusicoID" class="form-control" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Nome" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <input asp-for="Nome" class="form-control" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Idade" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <input asp-for="Idade" class="form-control" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Instrumento" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <input asp-for="Instrumento" class="form-control" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Telefone" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <input asp-for="Telefone" class="form-control" disabled="disabled">
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Sexo" class="control-label"></label>
+            <br />
+            <div class="input-group">
+                <input asp-for="Sexo" class="form-control" disabled="disabled">
+            </div>
+        </div>
+    </div>
+    <div class="form-group text-center h3">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="MusicoID" />
+            <input type="submit" value="Remover" class="btn btn-warning" />
+            <a asp-action="Index" class="btn btn-info">Retornar</a>
+        </form>
+    </div>
+
+</div>

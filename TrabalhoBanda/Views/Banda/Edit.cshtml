@@ -1,0 +1,54 @@
+﻿@model TrabalhoBanda.Models.Banda
+
+@{
+    Layout = "_LayoutIES";
+}
+
+
+
+<div class="card-body">
+    <div class="card-header text-primary bg-light text-center h1">
+        Alterar Banda
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="BandaID" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatMusical" class="control-label"></label>
+                <input asp-for="CatMusical" class="form-control" />
+                <span asp-validation-for="CatMusical" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numIntegrantes" class="control-label"></label>
+                <input asp-for="numIntegrantes" class="form-control" />
+                <span asp-validation-for="numIntegrantes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numAlbuns" class="control-label"></label>
+                <input asp-for="numAlbuns" class="form-control" />
+                <span asp-validation-for="numAlbuns" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center h3">
+                <input type="submit" value="Atualizar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-light">Retornar</a>
+            </div>
+        </form>
+    </div>
+    
+</div>
+
+
+@section ScriptPage {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

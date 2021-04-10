@@ -1,0 +1,72 @@
+﻿@model IEnumerable<TrabalhoBanda.Models.Banda>
+
+@{
+    Layout = "_LayoutIES";
+}
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+}
+<p>
+    <div class="card-header text-primary bg-light text-center h1">
+         Lista de Bandas
+    </div>
+    
+</p>
+<div class="card-body">
+    <table class="table table-striped" id="tabela-departamentos">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BandaID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CatMusical)
+                </th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BandaID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CatMusical)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BandaID">Alterar</a> |
+                    <a asp-action="Details" asp-route-id="@item.BandaID">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BandaID">Excluir</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    <a asp-action="Create" class="btn btn-primary"> Criar Banda </a>
+</p>
+
+@section ScriptPage{
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+}
